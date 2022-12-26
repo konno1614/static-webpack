@@ -1,1 +1,1 @@
-# ejs-template_v2
+# static-wbpack
