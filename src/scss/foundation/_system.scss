@@ -1,0 +1,80 @@
+/* system
+--------------------------- */
+
+// color system
+$c-white: #fff;
+$c-black: #333;
+$c-primary: #ca6060;
+
+// responsive system
+@mixin breakpoint($point) {
+    @if $point == tablet {
+        @media (max-width: 1024px) {
+            @content;
+        }
+    }
+    @if $point == sp {
+        @media (max-width: 599px) {
+            @content;
+        }
+    }
+}
+
+// font system
+@mixin notosansjp() {
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+// font-weight system
+@mixin font_thin($weight: 100) {
+    font-weight: $weight;
+}
+@mixin font_light($weight: 300) {
+    font-weight: $weight;
+}
+@mixin font_regular($weight: 400) {
+    font-weight: $weight;
+}
+@mixin font_medium($weight: 500) {
+    font-weight: $weight;
+}
+@mixin font_bold($weight: 700) {
+    font-weight: $weight;
+}
+@mixin font_black($weight: 900) {
+    font-weight: $weight;
+}
+
+// transition
+@mixin transition-base($second: 0.3s) {
+    transition: all $second;
+}
+
+// display only
+.pc-only {
+    display: inline-block;
+    @include breakpoint(tablet) {
+        display: none;
+    }
+    @include breakpoint(sp) {
+        display: none;
+    }
+}
+.tablet-only {
+    display: none;
+    @include breakpoint(tablet) {
+        display: inline-block;
+    }
+    @include breakpoint(sp) {
+        display: none;
+    }
+}
+.sp-only {
+    display: none;
+    @include breakpoint(tablet) {
+        display: none;
+    }
+    @include breakpoint(sp) {
+        display: inline-block;
+    }
+}

@@ -1,0 +1,24 @@
+<%_ const path = './..'; _%>
+<%_ const headType = 'article'; _%>
+<%- include( path + '/components/_const.ejs'); %>
+<!DOCTYPE html>
+<html lang="ja">
+
+<head prefix="og: https://ogp.me/ns# fb: https://ogp.me/ns/fb# <%= headType %>: https://ogp.me/ns/<%= headType %>#">
+    <%- include(path + '/components/_head.ejs'); %>
+    <!-- external files -->
+    <link rel="stylesheet" href="<%= path %>/css/style.css" />
+</head>
+
+<body>
+    <%- include(path + '/components/_header.ejs'); %>
+
+    <main class="l-main">
+        <h2 class="o-title">about</h2>
+        <a href="<%= path %>/">Top</a>
+    </main>
+
+    <%- include(path + '/components/_footer.ejs'); %>
+</body>
+
+</html>

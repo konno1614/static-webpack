@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+    "target": "es5", //ES5に変換
+    "module": "es2015", //モジュールをES Modulesとして出力
+    "sourceMap": true, //soucemapを出力する
+    "strict": true, //厳格な型チェック機能を有効にする
+    "moduleResolution": "node", //node_modules からライブラリを読み込む
+    "esModuleInterop": true, //CommonJS 形式のモジュールを、ES Modules でインポートできるようにする
+    //以下はお好みで。
+    "skipLibCheck": true, //型システムの精度を犠牲にすることで、コンパイル実行時間を削減
+    "forceConsistentCasingInFileNames": true //import時にファイルパスの文字列で大文字小文字を区別するかどうか
+    }
+}
