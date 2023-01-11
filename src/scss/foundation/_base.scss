@@ -26,7 +26,7 @@ body {
     @include s.notosansjp();
     @include s.font_regular();
     overflow-x: hidden;
-    &.navOpen {
+    &.is-open {
         overflow: hidden;
         touch-action: none;
     }

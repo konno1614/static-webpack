@@ -1,20 +1,27 @@
-// foundation
-@use "./foundation/reset";
-@use "./foundation/system";
-@use "./foundation/base";
-@use "./foundation/mixin";
+// Foundation
+@use "./Foundation/reset";
+@use "./Foundation/system";
+@use "./Foundation/base";
+@use "./Foundation/mixin";
 
-// layout
-@use "./layout/header";
-@use "./layout/footer";
-@use "./layout/section";
-@use "./layout/inner";
-@use "./layout/main";
+// Layout
+@use "./Layout/header";
+@use "./Layout/footer";
+@use "./Layout/main";
+@use "./Layout/section";
+@use "./Layout/inner";
 
-// object
-@use "./object/title";
-@use "./object/spNav";
+// Object
 
-// main
-@use "./main/sample";
-@use "./main/top";
+
+// Object/Component
+@use "./Object/Component/button";
+@use "./Object/Component/sp-nav";
+@use "./Object/Component/title";
+
+// Object/Project
+@use "./Object/Project/top";
+
+// Object/Utility
+@use "./Object/Utility/margin";
+@use "./Object/Utility/padding";

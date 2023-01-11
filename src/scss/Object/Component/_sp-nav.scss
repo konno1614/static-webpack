@@ -1,8 +1,8 @@
-@use "../foundation/system" as s;
-@use "../foundation/mixin" as m;
+@use "../../foundation/system" as s;
+@use "../../foundation/mixin" as m;
 
 /* ハンバーガーメニュー */
-.o-hamburger {
+.c-hamburger {
     display: none;
     @include s.breakpoint(sp) {
         position: fixed;
@@ -38,7 +38,7 @@
                 margin-top: 4px;
             }
         }
-        &.navOpen {
+        &.is-open {
             span {
                 &:nth-child(1) {
                     transform: rotate(45deg);
@@ -58,7 +58,7 @@
     }
 }
 /* sp ナビ */
-.o-spNav {
+.c-sp-nav {
     background-color: s.$c-white;
     position: fixed;
     z-index: 99;
@@ -72,7 +72,7 @@
     height: 100%;
     opacity: 0;
     visibility: hidden;
-    &.navOpen {
+    &.is-open {
         visibility: visible;
         opacity: 1;
         left: 0;
@@ -92,7 +92,7 @@
     }
 }
 /* 展開時背景 */
-.o-spNavBg {
+.c-sp-nav-bg {
     opacity: 0;
     visibility: hidden;
     transition: .5s all ease-in-out;
@@ -103,7 +103,7 @@
     z-index: 9;
     top: 0;
     left: 0;
-    &.navOpen {
+    &.is-open {
         visibility: visible;
         opacity: 1;
         overflow: hidden;

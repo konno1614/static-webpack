@@ -29,6 +29,13 @@ npm run start
 npm run build
 ```
 
-#### 使用フォント
-[Noto Sans Japanese](https://fonts.google.com/noto/specimen/Noto+Sans+JP)
+### 備考
 
+#### 使用フォント
+[Noto Sans Japanese](https://fonts.google.com/noto/specimen/Noto+Sans+JP)を採用
+
+#### スタイルの設計ベース
+[FLOCSS](https://github.com/hiloki/flocss)を採用
+
+#### 単語のつながり
+[ケバブケース](https://qiita.com/ybiquitous/items/75288bacb596a82a2805)を採用

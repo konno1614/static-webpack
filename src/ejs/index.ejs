@@ -10,13 +10,42 @@
     </head>
 <body>
     <%- include(path + '/components/_header.ejs'); %>
-    <%- include(path + '/components/_spNav.ejs'); %>
+    <%- include(path + '/components/_sp-nav.ejs'); %>
 
-    <main class="l-main c-top">
-        <h2 class="o-title">h2タイトル</h2>
-        <p><a href="<%= path %>/about">About</a></p>
+    <main class="l-main p-top">
+        <section id="section01" class="l-section">
+            <h2 class="c-title">h2タイトル</h2>
+            <div class="l-inner">
+                Section01
+            </div>
+        </section>
+        <section id="section02" class="l-section">
+            <h2 class="c-title">h2タイトル</h2>
+            <div class="l-inner">
+                Section02
+            </div>
+        </section>
+        <section id="section03" class="l-section">
+            <h2 class="c-title">h2タイトル</h2>
+            <div class="l-inner">
+                Section03
+            </div>
+        </section>
+        <section id="section04" class="l-section">
+            <h2 class="c-title">h2タイトル</h2>
+            <div class="l-inner">
+                Section04
+            </div>
+        </section>
+        <section id="section05" class="l-section">
+            <h2 class="c-title">h2タイトル</h2>
+            <div class="l-inner">
+                Section05
+            </div>
+        </section>
     </main>
 
     <%- include(path + '/components/_footer.ejs'); %>
+    <script defer src="<%= path %>/js/index.js"></script>
 </body>
 </html>

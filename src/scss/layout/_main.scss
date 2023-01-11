@@ -2,9 +2,11 @@
 @use "../foundation/mixin" as m;
 
 .l-main {
+    padding-top: 100px;
     background-color: yellow;
     @include s.breakpoint(tablet) {
     }
     @include s.breakpoint(sp) {
+        padding-top: 50px;
     }
 }

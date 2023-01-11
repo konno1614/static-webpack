@@ -1,29 +1,29 @@
 import $ from "jquery";
 
 $(function() {
-    $('.js-toggleNav').on('click', function () {
-        $(this).toggleClass('navOpen');
-        $('.o-spNav').toggleClass('navOpen');
-        $('.o-spNavBg').toggleClass('navOpen');
-        $('body').toggleClass('navOpen');
+    $(".js-toggle-nav").on("click", function () {
+        $(this).toggleClass("is-open");
+        $(".c-sp-nav").toggleClass("is-open");
+        $(".c-sp-nav-bg").toggleClass("is-open");
+        $("body").toggleClass("is-open");
     });
-    $('.o-spNav__item a').on('click', function () {
-        $('.js-toggleNav').removeClass('navOpen');
-        $('.o-spNav').removeClass('navOpen');
-        $('.o-spNavBg').removeClass('navOpen');
-        $('body').removeClass('navOpen');
+    $(".c-sp-nav__item a").on("click", function () {
+        $(".js-toggle-nav").removeClass("is-open");
+        $(".c-sp-nav").removeClass("is-open");
+        $(".c-sp-nav-bg").removeClass("is-open");
+        $("body").removeClass("is-open");
     });
-    $('.o-spNavBg').on('click', function () {
-        $(this).removeClass('navOpen');
-        $('.js-toggleNav').removeClass('navOpen');
-        $('.o-spNav').removeClass('navOpen');
-        $('body').removeClass('navOpen');
+    $(".c-sp-nav-bg").on("click", function () {
+        $(this).removeClass("is-open");
+        $(".js-toggle-nav").removeClass("is-open");
+        $(".c-sp-nav").removeClass("is-open");
+        $("body").removeClass("is-open");
     });
     // リサイズされたらクラス削除
-    $(window).on('resize', function() {
-        $('.js-toggleNav').removeClass('navOpen');
-        $('.o-spNav').removeClass('navOpen');
-        $('.o-spNavBg').removeClass('navOpen');
-        $('body').removeClass('navOpen');
+    $(window).on("resize", function() {
+        $(".js-toggle-nav").removeClass("is-open");
+        $(".c-sp-nav").removeClass("is-open");
+        $(".c-sp-nav-bg").removeClass("is-open");
+        $("body").removeClass("is-open");
     });
 });
