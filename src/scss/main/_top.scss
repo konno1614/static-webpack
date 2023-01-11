@@ -2,6 +2,7 @@
 @use "../foundation/mixin" as m;
 
 .c-top {
+    min-height: 200vh;
     @include s.breakpoint(tablet) {
     }
     @include s.breakpoint(sp) {

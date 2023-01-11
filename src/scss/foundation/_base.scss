@@ -26,6 +26,10 @@ body {
     @include s.notosansjp();
     @include s.font_regular();
     overflow-x: hidden;
+    &.navOpen {
+        overflow: hidden;
+        touch-action: none;
+    }
 }
 ::selection {
     background-color: rgba($color: s.$c-black, $alpha: 0.7);
