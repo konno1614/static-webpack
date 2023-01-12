@@ -21,8 +21,25 @@ $c-primary: #ca6060;
 }
 
 // font system
+// Noto Sans JP
 @mixin notosansjp() {
     font-family: "Noto Sans JP", sans-serif;
+}
+// Corporate-Logo-Rounded
+@font-face {
+    font-family: 'Corporate-Logo-Rounded';
+    src: url(../font/Corporate-Logo-Rounded.ttf);
+}
+@mixin corporate() {
+    font-family: "Corporate-Logo-Rounded", sans-serif;
+}
+// YomogiFont
+@font-face {
+    font-family: 'YomogiFont';
+    src: url(../font/YomogiFont.ttf);
+}
+@mixin yomogi() {
+    font-family: "YomogiFont", sans-serif;
 }
 
 // font-weight system

@@ -56,7 +56,6 @@ const htmlGlobPlugins = (entries) => {
                 },
                 templatePath: `${filePath.ejs}${key}.ejs`,
             }),
-
             //JS・CSS自動出力と圧縮を無効化
             inject: false,
             minify: false,
@@ -108,45 +107,45 @@ const app = {
             test: /\.(sa|sc|c)ss$/,
             // Sassファイルの読み込みとコンパイル
             use: [
-            // CSSファイルを抽出するように MiniCssExtractPlugin のローダーを指定
-            {
-                loader: MiniCssExtractPlugin.loader,
-            },
-            // CSSをバンドルするためのローダー
-            {
-                loader: 'css-loader',
-                options: {
-                //URL の解決を無効に
-                url: false,
-                // production モードでなければソースマップを有効に
-                sourceMap: enabledSourceMap,
-                // postcss-loader と sass-loader の場合は2を指定
-                importLoaders: 2,
-                // 0 => no loaders (default);
-                // 1 => postcss-loader;
-                // 2 => postcss-loader, sass-loader
+                // CSSファイルを抽出するように MiniCssExtractPlugin のローダーを指定
+                {
+                    loader: MiniCssExtractPlugin.loader,
                 },
-            },
-            // PostCSS（autoprefixer）の設定
-            {
-                loader: 'postcss-loader',
-                options: {
-                // PostCSS でもソースマップを有効に
-                sourceMap: enabledSourceMap,
-                postcssOptions: {
-                    // ベンダープレフィックスを自動付与
-                    plugins: [require('autoprefixer')({ grid: true })],
+                // CSSをバンドルするためのローダー
+                {
+                    loader: 'css-loader',
+                    options: {
+                        //URL の解決を無効に
+                        url: false,
+                        // production モードでなければソースマップを有効に
+                        sourceMap: enabledSourceMap,
+                        // postcss-loader と sass-loader の場合は2を指定
+                        importLoaders: 2,
+                        // 0 => no loaders (default);
+                        // 1 => postcss-loader;
+                        // 2 => postcss-loader, sass-loader
+                    },
                 },
+                // PostCSS（autoprefixer）の設定
+                {
+                    loader: 'postcss-loader',
+                    options: {
+                    // PostCSS でもソースマップを有効に
+                    sourceMap: enabledSourceMap,
+                    postcssOptions: {
+                        // ベンダープレフィックスを自動付与
+                        plugins: [require('autoprefixer')({ grid: true })],
+                    },
+                    },
                 },
-            },
-            // Sass を CSS へ変換するローダー
-            {
-                loader: 'sass-loader',
-                options: {
-                //  production モードでなければソースマップを有効に
-                sourceMap: enabledSourceMap,
+                // Sass を CSS へ変換するローダー
+                {
+                    loader: 'sass-loader',
+                    options: {
+                        //  production モードでなければソースマップを有効に
+                        sourceMap: enabledSourceMap,
+                    },
                 },
-            },
             ],
         },
         ],
@@ -165,8 +164,14 @@ const app = {
         new CopyPlugin({
             patterns: [
                 {
+                    // 画像フォルダの複製
                     from: path.resolve(__dirname, 'src/images/'),
                     to: path.resolve(__dirname, 'public/images'),
+                },
+                {
+                    // フォントフォルダの複製
+                    from: path.resolve(__dirname, 'src/font/'),
+                    to: path.resolve(__dirname, 'public/font'),
                 },
             ],
         }),

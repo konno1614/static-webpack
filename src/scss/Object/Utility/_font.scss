@@ -1,0 +1,18 @@
+@use "../../foundation/system" as s;
+@use "../../foundation/mixin" as m;
+
+.u-font {
+    @include s.breakpoint(tablet) {
+    }
+    @include s.breakpoint(sp) {
+    }
+    &--notosansjp {
+        @include s.notosansjp();
+    }
+    &--corporate {
+        @include s.corporate();
+    }
+    &--yomogi {
+        @include s.yomogi();
+    }
+}

@@ -4,11 +4,13 @@
 <%- include( path + '/components/_const.ejs'); %>
 <!DOCTYPE html>
 <html lang="ja">
-    <head prefix="og: https://ogp.me/ns# fb: https://ogp.me/ns/fb# <%= headType %>: https://ogp.me/ns/<%= headType %>#">
-        <%- include( path + '/components/_head.ejs'); %>
-        <!-- external files -->
-        <link rel="stylesheet" href="<%= path %>/css/style.css" />
-    </head>
+
+<head prefix="og: https://ogp.me/ns# fb: https://ogp.me/ns/fb# <%= headType %>: https://ogp.me/ns/<%= headType %>#">
+    <%- include( path + '/components/_head.ejs'); %>
+    <!-- external files -->
+    <link rel="stylesheet" href="<%= path %>/css/style.css" />
+</head>
+
 <body id="<%= pageId %>">
     <%- include(path + '/components/_header.ejs',{pageId:pageId}); %>
     <%- include(path + '/components/_sp-nav.ejs'); %>
@@ -18,7 +20,11 @@
             <h2 class="c-title">h2タイトル</h2>
             <div class="l-inner">
                 Section01
-                <a href="/about">about</a>
+                <p>
+                    <a href="<%= path %>/about/">about</a>
+                </p>
+                <p class="u-font--corporate">corporate</p>
+                <p class="u-font--yomogi">yomogi</p>
             </div>
         </section>
         <section id="section02" class="l-section">
