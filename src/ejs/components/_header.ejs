@@ -1,3 +1,10 @@
 <header class="l-header">
     Header
+    <% if(pageId === 'home') { %>
+        <!-- トップページでだしたいナビ -->
+        <p>topのみ</p>
+        <% } else { %>
+        <!-- トップページ以外でだしたいナビ -->
+        <p>top以外</p>
+    <% } %>
 </header>

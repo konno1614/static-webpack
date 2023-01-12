@@ -1,4 +1,6 @@
 node_modules/
-dist/
+public/
 webpack.config.js
 .eslintrc.js
+# 一旦無視させる
+src/js/*

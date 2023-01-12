@@ -31,6 +31,9 @@ npm run build
 
 ### 備考
 
+#### 参考記事
+[webpack5の設定方法 - EJS、TypeScript、Dart SassとAutoprefixer、ESLint、Prettierを自動化する](https://yumegori.com/webpack5-setting-method)
+
 #### 使用フォント
 [Noto Sans Japanese](https://fonts.google.com/noto/specimen/Noto+Sans+JP)を採用
 

@@ -1,0 +1,32 @@
+<!-- 画像 -->
+<img src="<%= path %>/images/common/sample-image.jpg" alt="">
+
+<!-- include関数 -->
+<%- include( path + '/components/_head.ejs'); %>
+
+<!-- for -->
+<% for (var i = 0; i < 5; i++) { %>
+    <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+<% } %>
+
+<!-- while -->
+<% var counter = 1; %>
+<% while (counter <= 10) { %>
+    <p>このループは<%= counter %>回目です。</p>
+<% counter++; %>
+<% } %>
+
+<!-- array.forEach() -->
+<% var ary = ['アイテム1', 'アイテム2', 'アイテム3']; %>
+<% ary.forEach(function (value, key) { %>
+    <p><%= key %>: <%= value %></p>
+<% }); %>
+
+<!-- if -->
+<% if(pageId === 'home') { %>
+    <!-- トップページでだしたいナビ -->
+    <p>topのみ</p>
+    <% } else { %>
+    <!-- トップページ以外でだしたいナビ -->
+    <p>top以外</p>
+<% } %>

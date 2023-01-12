@@ -5,7 +5,8 @@
     "scripts": {
         "build": "NODE_ENV=production webpack --mode production",
         "dev": "webpack --mode development",
-        "start": "webpack serve --mode development"
+        "start": "webpack serve --mode development",
+        "lint": "eslint --cache --fix ./src/js/ && prettier --write ./src/"
     },
     "repository": {
         "type": "git",
@@ -31,6 +32,7 @@
         "eslint-config-airbnb-typescript": "^17.0.0",
         "eslint-config-prettier": "^8.6.0",
         "eslint-plugin-import": "^2.26.0",
+        "eslint-plugin-react": "^7.32.0",
         "eslint-plugin-unused-imports": "^2.0.0",
         "html-loader": "^4.2.0",
         "html-webpack-plugin": "^5.5.0",

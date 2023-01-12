@@ -1,5 +1,6 @@
 <%_ const path = '.'; _%>
 <%_ const headType='website'; _%>
+<% const pageId = 'home'; %>
 <%- include( path + '/components/_const.ejs'); %>
 <!DOCTYPE html>
 <html lang="ja">
@@ -8,8 +9,8 @@
         <!-- external files -->
         <link rel="stylesheet" href="<%= path %>/css/style.css" />
     </head>
-<body>
-    <%- include(path + '/components/_header.ejs'); %>
+<body id="<%= pageId %>">
+    <%- include(path + '/components/_header.ejs',{pageId:pageId}); %>
     <%- include(path + '/components/_sp-nav.ejs'); %>
 
     <main class="l-main p-top">
@@ -17,6 +18,7 @@
             <h2 class="c-title">h2タイトル</h2>
             <div class="l-inner">
                 Section01
+                <a href="/about">about</a>
             </div>
         </section>
         <section id="section02" class="l-section">
