@@ -1,6 +1,6 @@
 <%_ const path = './..'; _%>
 <%_ const headType = 'article'; _%>
-<%_ const pageId = 'about'; _%>
+<%_ const pageId = 'news'; _%>
 <%- include( path + '/components/_const.ejs'); %>
 <!DOCTYPE html>
 <html lang="ja">
@@ -14,8 +14,9 @@
     <%- include(path + '/components/_sp-nav.ejs'); %>
 
     <main class="l-main">
-        <h2 class="o-title">about</h2>
+        <h2 class="o-title">news</h2>
         <a href="<%= path %>/">Top</a>
+        <a href="./2023/01/12.html">2023.01.12.html</a>
     </main>
 
     <%- include(path + '/components/_footer.ejs',{path:path}); %>

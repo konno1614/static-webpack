@@ -1,12 +1,12 @@
 <%_ const path = '.'; _%>
 <%_ const headType='website'; _%>
-<% const pageId = 'home'; %>
+<%_ const pageId = 'home'; _%>
 <%- include( path + '/components/_const.ejs'); %>
 <!DOCTYPE html>
 <html lang="ja">
 
 <head prefix="og: https://ogp.me/ns# fb: https://ogp.me/ns/fb# <%= headType %>: https://ogp.me/ns/<%= headType %>#">
-    <%- include( path + '/components/_head.ejs'); %>
+    <%- include( path + '/components/_head.ejs',{path:path,pageId:pageId}); %>
     <!-- external files -->
     <link rel="stylesheet" href="<%= path %>/css/style.css" />
 </head>
@@ -31,6 +31,9 @@
             <h2 class="c-title">h2タイトル</h2>
             <div class="l-inner">
                 Section02
+                <p>
+                    <a href="<%= path %>/news/">news</a>
+                </p>
             </div>
         </section>
         <section id="section03" class="l-section">
@@ -53,7 +56,7 @@
         </section>
     </main>
 
-    <%- include(path + '/components/_footer.ejs'); %>
+    <%- include(path + '/components/_footer.ejs',{path:path,pageId:pageId}); %>
     <script defer src="<%= path %>/js/index.js"></script>
 </body>
 </html>
