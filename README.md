@@ -2,6 +2,9 @@
 
 ## フロント開発
 
+### GitHub Pages
+[/public](https://konno1614.github.io/static-webpack/public/)
+
 ### ディレクトリ構造
 
 ```txt
