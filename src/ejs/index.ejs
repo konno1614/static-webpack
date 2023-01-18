@@ -1,19 +1,21 @@
 <%_ const path = '.'; _%>
 <%_ const headType='website'; _%>
 <%_ const pageId = 'home'; _%>
+<%_ const pageTitle = 'ページタイトル'; _%>
+<%_ const pageType = 'top'; _%>
 <%- include( path + '/components/_const.ejs'); %>
 <!DOCTYPE html>
 <html lang="ja">
 
 <head prefix="og: https://ogp.me/ns# fb: https://ogp.me/ns/fb# <%= headType %>: https://ogp.me/ns/<%= headType %>#">
-    <%- include( path + '/components/_head.ejs',{path:path,pageId:pageId}); %>
+    <%- include(path + '/components/_head.ejs',{path:path,pageId:pageId,pageTitle:pageTitle}); %>
 </head>
 
 <body id="<%= pageId %>">
-    <%- include(path + '/components/_header.ejs',{pageId:pageId}); %>
-    <%- include(path + '/components/_sp-nav.ejs'); %>
+    <%- include(path + '/components/_header.ejs',{path:path,pageId:pageId,pageTitle:pageTitle}); %>
+    <%- include(path + '/components/_sp-nav.ejs',{path:path,pageId:pageId,pageTitle:pageTitle}); %>
 
-    <main class="l-main p-top">
+    <main class="l-main p-<%= pageType %> p-<%= pageId %>">
         <section id="section01" class="l-section">
             <h2 class="c-title">h2タイトル</h2>
             <div class="l-inner">
@@ -56,6 +58,6 @@
         </section>
     </main>
 
-    <%- include(path + '/components/_footer.ejs',{path:path,pageId:pageId}); %>
+    <%- include(path + '/components/_footer.ejs',{path:path,pageId:pageId,pageTitle:pageTitle}); %>
 </body>
 </html>

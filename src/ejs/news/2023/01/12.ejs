@@ -1,7 +1,8 @@
 <%_ const path = './../../..'; _%>
 <%_ const headType = 'article'; _%>
 <%_ const pageId = 'articles'; _%>
-<%_ const articleTitle = '記事タイトル'; _%>
+<%_ const pageTitle = 'お知らせ詳細'; _%>
+<%_ const articleTitle = '記事タイトル2023.00.00'; _%>
 <%_ const articleDescription = '記事ディスクリプション'; _%>
 <%_ const articleUrl = 'news/2023/01/12.html'; _%>
 <%- include( path + '/components/_const.ejs'); _%>
@@ -9,19 +10,19 @@
 <html lang="ja">
 
 <head prefix="og: https://ogp.me/ns# fb: https://ogp.me/ns/fb# <%= headType %>: https://ogp.me/ns/<%= headType %>#">
-    <%- include(path + '/components/_head.ejs',{path:path,pageId:pageId,articleTitle:articleTitle,articleDescription:articleDescription,articleUrl:articleUrl}); %>
+    <%- include(path + '/components/_head.ejs',{path:path,pageId:pageId,pageTitle:pageTitle,articleTitle:articleTitle,articleDescription:articleDescription,articleUrl:articleUrl}); %>
 </head>
 
 <body id="<%= pageId %>">
-    <%- include(path + '/components/_header.ejs',{pageId:pageId}); %>
-    <%- include(path + '/components/_sp-nav.ejs'); %>
+    <%- include(path + '/components/_header.ejs',{path:path,pageId:pageId,pageTitle:pageTitle}); %>
+    <%- include(path + '/components/_sp-nav.ejs',{path:path,pageId:pageId,pageTitle:pageTitle}); %>
 
     <main class="l-main">
         <h2 class="o-title">news</h2>
         <a href="<%= path %>/">Top</a>
     </main>
 
-    <%- include(path + '/components/_footer.ejs',{path:path}); %>
+    <%- include(path + '/components/_footer.ejs',{path:path,pageId:pageId,pageTitle:pageTitle}); %>
 </body>
 
 </html>
