@@ -78,7 +78,7 @@ const app = {
         //ルートディレクトリの指定
         static: path.resolve(__dirname, 'src'),
         port: '3000',
-        host: '192.168.10.109',
+        // host: '192.168.10.109',
         hot: true,
         open: true,
         watchFiles: ['src/**/*', 'public/**/*'],
