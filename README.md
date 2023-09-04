@@ -14,7 +14,7 @@
 
 ### 推奨nodeバーション
 ```
-node.js(version: v16.13.1)
+node.js(version: v20.0.0)
 ```
 
 ### 依存ファイルインストール
