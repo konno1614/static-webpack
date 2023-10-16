@@ -32,7 +32,7 @@ npm run start
 npm run build
 ```
 
-### 備考
+## 備考
 
 #### 開発環境準備の参考記事
 [webpack5の設定方法 - EJS、TypeScript、Dart SassとAutoprefixer、ESLint、Prettierを自動化する](https://yumegori.com/webpack5-setting-method)を参考

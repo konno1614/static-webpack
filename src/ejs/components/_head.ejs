@@ -15,9 +15,9 @@
     <% } %>
     <meta name="format-detection" content="telephone=no">
     <!-- favicon -->
-    <link rel="shortcut icon" href="<%= site.url %>/images/favicon.ico">
-    <link rel="apple-touch-icon" href="<%= site.url %>/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" href="<%= site.url %>/images/android-chrome-192x192.png">
+    <link rel="shortcut icon" href="<%= path %>/images/favicon.ico">
+    <link rel="apple-touch-icon" href="<%= path %>/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="<%= path %>/images/android-chrome-192x192.png">
     <!-- og -->
     <meta property="og:locale" content="ja_JP" />
     <meta property="og:type" content="website" />
@@ -63,3 +63,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <!-- external files -->
     <link rel="stylesheet" href="<%= path %>/css/style.css" />
+    <style>
+        :root {
+            --theme-color: yellow;
+        }
+        .box {
+            background-color: var(--theme-color);
+        }
+    </style>

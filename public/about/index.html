@@ -15,9 +15,9 @@
     
     <meta name="format-detection" content="telephone=no">
     <!-- favicon -->
-    <link rel="shortcut icon" href="https://www.google.com/images/favicon.ico">
-    <link rel="apple-touch-icon" href="https://www.google.com/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" href="https://www.google.com/images/android-chrome-192x192.png">
+    <link rel="shortcut icon" href="./../images/favicon.ico">
+    <link rel="apple-touch-icon" href="./../images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="./../images/android-chrome-192x192.png">
     <!-- og -->
     <meta property="og:locale" content="ja_JP" />
     <meta property="og:type" content="website" />
@@ -47,6 +47,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <!-- external files -->
     <link rel="stylesheet" href="./../css/style.css" />
+    <style>
+        :root {
+            --theme-color: yellow;
+        }
+        .box {
+            background-color: var(--theme-color);
+        }
+    </style>
 
 </head>
 
@@ -88,6 +96,9 @@
 
     <main class="l-main p-underlayer p-about">
         <h2 class="o-title">about</h2>
+        <div class="box">
+            BOX
+        </div>
         <a href="./../">Top</a>
     </main>
 
