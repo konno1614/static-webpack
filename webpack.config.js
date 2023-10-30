@@ -129,12 +129,12 @@ const app = {
                 {
                     loader: 'postcss-loader',
                     options: {
-                    // PostCSS でもソースマップを有効に
-                    sourceMap: enabledSourceMap,
-                    postcssOptions: {
-                        // ベンダープレフィックスを自動付与
-                        plugins: [require('autoprefixer')({ grid: true })],
-                    },
+                        // PostCSS でもソースマップを有効に
+                        sourceMap: enabledSourceMap,
+                        postcssOptions: {
+                            // ベンダープレフィックスを自動付与
+                            plugins: [require('autoprefixer')({ grid: true })],
+                        },
                     },
                 },
                 // Sass を CSS へ変換するローダー

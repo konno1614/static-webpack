@@ -14,7 +14,7 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        transition: .3s all ease-in-out;
+        @include s.transition-base();
         width: 40px;
         height: 40px;
         border-radius: 50%;
@@ -29,7 +29,7 @@
             width: 16px;
             height: 2px;
             background-color: s.$c-white;
-            transition: .3s all ease-in-out;
+            @include s.transition-base();
             &+span {
                 margin-top: 4px;
             }
@@ -61,7 +61,7 @@
     left: -100%;
     padding-top: 50px;
     padding-bottom: 50px;
-    transition: all .5s ease-out;
+    @include s.transition-base();
     width: 100%;
     height: 100%;
     opacity: 0;
@@ -89,7 +89,7 @@
 .c-sp-nav-bg {
     opacity: 0;
     visibility: hidden;
-    transition: .5s all ease-in-out;
+    @include s.transition-base();
     width: 100%;
     height: 100%;
     background-color: #707070;
