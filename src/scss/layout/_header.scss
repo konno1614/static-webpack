@@ -2,7 +2,7 @@
 @use "../foundation/mixin" as m;
 
 .l-header {
-    background-color: dodgerblue;
+    background-color: brown;
     @include s.breakpoint(tablet) {
     }
     @include s.breakpoint(sp) {

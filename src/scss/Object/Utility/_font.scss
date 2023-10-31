@@ -12,7 +12,10 @@
     &--corporate {
         @include s.corporate();
     }
-    &--yomogi {
-        @include s.yomogi();
+    &--genjyuu {
+        @include s.genjyuu();
+    }
+    &--genjyuu_medium {
+        @include s.genjyuu_medium();
     }
 }

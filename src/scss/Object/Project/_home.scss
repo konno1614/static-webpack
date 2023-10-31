@@ -2,7 +2,6 @@
 @use "../../foundation/mixin" as m;
 
 .p-home {
-    background-color: green;
     @include s.breakpoint(tablet) {
     }
     @include s.breakpoint(sp) {

@@ -28,19 +28,35 @@ $c-primary: #ca6060;
 // Corporate-Logo-Rounded
 @font-face {
     font-family: 'Corporate-Logo-Rounded';
-    src: url(../font/Corporate-Logo-Rounded.ttf);
+    src: url(../font/Corporate-Logo-Rounded.woff);
 }
 @mixin corporate() {
-    font-family: "Corporate-Logo-Rounded", sans-serif;
+    font-family: "Corporate-Logo-Rounded", "Noto Sans JP", sans-serif;
 }
 // YomogiFont
 @font-face {
     font-family: 'YomogiFont';
-    src: url(../font/YomogiFont.ttf);
+    src: url(../font/YomogiFont.woff);
 }
 @mixin yomogi() {
-    font-family: "YomogiFont", sans-serif;
+    font-family: "YomogiFont", "Noto Sans JP", sans-serif;
 }
+// GenJyuuGothic
+@font-face {
+    font-family: 'GenJyuuGothic-Normal';
+    src: url(../font/GenJyuuGothic-Normal.woff);
+}
+@mixin genjyuu() {
+    font-family: "GenJyuuGothic-Normal", "Noto Sans JP", sans-serif;
+}
+@font-face {
+    font-family: 'GenJyuuGothic-Medium';
+    src: url(../font/GenJyuuGothic-Medium.woff);
+}
+@mixin genjyuu_medium() {
+    font-family: "GenJyuuGothic-Medium", "Noto Sans JP", sans-serif;
+}
+
 
 // font-weight system
 @mixin font_thin($weight: 100) {
