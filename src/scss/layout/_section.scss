@@ -2,8 +2,6 @@
 @use "../foundation/mixin" as m;
 
 .l-section {
-    border: 1px solid s.$c-black;
-    padding: 20px;
     @include s.breakpoint(tablet) {
     }
     @include s.breakpoint(sp) {

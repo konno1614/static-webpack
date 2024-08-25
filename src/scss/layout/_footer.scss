@@ -2,7 +2,7 @@
 @use "../foundation/mixin" as m;
 
 .l-footer {
-    background-color: green;
+    background-color: greenyellow;
     @include s.breakpoint(tablet) {
     }
     @include s.breakpoint(sp) {

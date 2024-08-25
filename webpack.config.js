@@ -52,7 +52,16 @@ const htmlGlobPlugins = (entries) => {
                 htmlLoaderOption: {
                     //ファイル自動読み込みと圧縮を無効化
                     sources: false,
-                    minimize: false,
+                    minimize: {
+                        // 大文字と小文字を区別
+                        caseSensitive: true,
+                        // タグ間の空白を削除
+                        collapseWhitespace: true,
+                        // タグ間に改行が含まれる場合に詰める（collapseWhitespace: trueと共に使用）
+                        preserveLineBreaks: false,
+                        // HTMLコメントを削除
+                        removeComments: true,
+                    },
                 },
                 templatePath: `${filePath.ejs}${key}.ejs`,
             }),
@@ -78,7 +87,6 @@ const app = {
         //ルートディレクトリの指定
         static: path.resolve(__dirname, 'src'),
         port: '3000',
-        host: '192.168.10.109',
         hot: true,
         open: true,
         watchFiles: ['src/**/*', 'public/**/*'],
@@ -130,12 +138,12 @@ const app = {
                 {
                     loader: 'postcss-loader',
                     options: {
-                    // PostCSS でもソースマップを有効に
-                    sourceMap: enabledSourceMap,
-                    postcssOptions: {
-                        // ベンダープレフィックスを自動付与
-                        plugins: [require('autoprefixer')({ grid: true })],
-                    },
+                        // PostCSS でもソースマップを有効に
+                        sourceMap: enabledSourceMap,
+                        postcssOptions: {
+                            // ベンダープレフィックスを自動付与
+                            plugins: [require('autoprefixer')({ grid: true })],
+                        },
                     },
                 },
                 // Sass を CSS へ変換するローダー
@@ -185,4 +193,3 @@ const app = {
 };
 
 module.exports = app;
-

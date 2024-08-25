@@ -12,15 +12,13 @@
 @use "./Layout/inner";
 
 // Object
-
-
 // Object/Component
 @use "./Object/Component/button";
 @use "./Object/Component/sp-nav";
 @use "./Object/Component/title";
 
 // Object/Project
-@use "./Object/Project/top";
+@use "./Object/Project/home";
 
 // Object/Utility
 @use "./Object/Utility/font";

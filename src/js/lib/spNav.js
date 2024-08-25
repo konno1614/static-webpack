@@ -19,7 +19,7 @@ $(function() {
         $(".c-sp-nav").removeClass("is-open");
         $("body").removeClass("is-open");
     });
-    // リサイズされたらクラス削除
+    // リサイズされたらリセット
     $(window).on("resize", function() {
         $(".js-toggle-nav").removeClass("is-open");
         $(".c-sp-nav").removeClass("is-open");

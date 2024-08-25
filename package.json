@@ -15,7 +15,7 @@
     "author": "konno1614",
     "license": "ISC",
     "engines": {
-        "node": "16.13.1"
+        "node": "18.0.0"
     },
     "bugs": {
         "url": "https://github.com/konno1614/static-webpack/issues"

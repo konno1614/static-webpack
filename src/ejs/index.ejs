@@ -1,22 +1,23 @@
 <%_ const path = '.'; _%>
-<%_ const headType='website'; _%>
+<%_ const headType = 'website'; _%>
 <%_ const pageId = 'home'; _%>
+<%_ const pageTitle = ''; _%>
+<%_ const pageType = 'top'; _%>
 <%- include( path + '/components/_const.ejs'); %>
 <!DOCTYPE html>
 <html lang="ja">
 
 <head prefix="og: https://ogp.me/ns# fb: https://ogp.me/ns/fb# <%= headType %>: https://ogp.me/ns/<%= headType %>#">
-    <%- include( path + '/components/_head.ejs',{path:path,pageId:pageId}); %>
-    <!-- external files -->
-    <link rel="stylesheet" href="<%= path %>/css/style.css" />
+    <%- include(path + '/components/_head.ejs',{path:path,pageId:pageId,pageTitle:pageTitle}); %>
 </head>
 
 <body id="<%= pageId %>">
-    <%- include(path + '/components/_header.ejs',{pageId:pageId}); %>
-    <%- include(path + '/components/_sp-nav.ejs'); %>
+    <%- include(path + '/components/_header.ejs',{path:path,pageId:pageId,pageTitle:pageTitle}); %>
+    <%- include(path + '/components/_sp-nav.ejs',{path:path,pageId:pageId,pageTitle:pageTitle}); %>
 
-    <main class="l-main p-top">
+    <main class="l-main p-<%= pageType %> p-<%= pageId %>">
         <section id="section01" class="l-section">
+            <!-- コメントアウトテスト -->
             <h2 class="c-title">h2タイトル</h2>
             <div class="l-inner">
                 Section01
@@ -24,6 +25,9 @@
                 <p>
                     <a href="<%= path %>/about/">about</a>
                 </p>
+                <div class="box">
+                    BOX Test
+                </div>
             </div>
         </section>
         <section id="section02" class="l-section">
@@ -42,6 +46,8 @@
                 Section03<br>
                 <p class="u-font--corporate">corporate</p>
                 <p class="u-font--yomogi">yomogi</p>
+                <p class="u-font--genjyuu">genjyuu</p>
+                <p class="u-font--genjyuu_medium">genjyuu_medium</p>
             </div>
         </section>
         <section id="section04" class="l-section">
@@ -58,6 +64,6 @@
         </section>
     </main>
 
-    <%- include(path + '/components/_footer.ejs',{path:path,pageId:pageId}); %>
+    <%- include(path + '/components/_footer.ejs',{path:path,pageId:pageId,pageTitle:pageTitle}); %>
 </body>
 </html>
