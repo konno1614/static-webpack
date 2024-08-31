@@ -45,16 +45,8 @@ npm run build
 
 ### 基本使用フォント
 
-[Noto Sans Japanese](https://fonts.google.com/noto/specimen/Noto+Sans+JP)を採用
+[Noto Sans Japanese](https://fonts.google.com/noto/specimen/Noto+Sans+JP)
 
 ### 命名規則
 
-[FLOCSS](https://github.com/hiloki/flocss)をベースとする
-
-### 単語のつながり
-
-[ケバブケース](https://qiita.com/ybiquitous/items/75288bacb596a82a2805)を採用
-
-### ファビコン
-
-[【2023 年最新版】ファビコン（favicon）のサイズ一覧と作り方](https://sdesignlabo.com/web/favicon/)を参考
+[FLOCSS](https://github.com/hiloki/flocss)

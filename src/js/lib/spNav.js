@@ -7,7 +7,7 @@ $(function() {
         $(".c-sp-nav-bg").toggleClass("is-open");
         $("body").toggleClass("is-open");
     });
-    $(".c-sp-nav__item a").on("click", function () {
+    $(".c-sp-nav__list li a").on("click", function () {
         $(".js-toggle-nav").removeClass("is-open");
         $(".c-sp-nav").removeClass("is-open");
         $(".c-sp-nav-bg").removeClass("is-open");
