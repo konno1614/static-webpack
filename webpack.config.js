@@ -7,6 +7,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 //画像のコピー用
 const CopyPlugin = require('copy-webpack-plugin');
+// 画像をwebpに変換
+const ImageminWebpWebpackPlugin= require("imagemin-webp-webpack-plugin");
 // HTMLの読み込み用
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 //読み込むファイルを複数指定する用
@@ -183,6 +185,14 @@ const app = {
                 },
             ],
         }),
+        new ImageminWebpWebpackPlugin({
+            config: [{
+                test: /\.(png|jpe?g)$/i, // 対象ファイル
+                options: {
+                quality:  75 // 画質
+                }
+            }]
+        })
     ],
     //source-map タイプのソースマップを出力
     devtool: 'source-map',
