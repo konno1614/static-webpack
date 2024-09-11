@@ -1,11 +1,5 @@
 /* system
 --------------------------- */
-
-// color system
-$c-white: #fff;
-$c-black: #333;
-$c-primary: #ca6060;
-
 // responsive system
 @mixin breakpoint($point) {
     @if $point == tablet {
@@ -18,64 +12,6 @@ $c-primary: #ca6060;
             @content;
         }
     }
-}
-
-// font system
-// Noto Sans JP
-@mixin notosansjp() {
-    font-family: "Noto Sans JP", sans-serif;
-}
-// Corporate-Logo-Rounded
-@font-face {
-    font-family: 'Corporate-Logo-Rounded';
-    src: url(../font/Corporate-Logo-Rounded.woff);
-}
-@mixin corporate() {
-    font-family: "Corporate-Logo-Rounded", "Noto Sans JP", sans-serif;
-}
-// YomogiFont
-@font-face {
-    font-family: 'YomogiFont';
-    src: url(../font/YomogiFont.woff);
-}
-@mixin yomogi() {
-    font-family: "YomogiFont", "Noto Sans JP", sans-serif;
-}
-// GenJyuuGothic
-@font-face {
-    font-family: 'GenJyuuGothic-Normal';
-    src: url(../font/GenJyuuGothic-Normal.woff);
-}
-@mixin genjyuu() {
-    font-family: "GenJyuuGothic-Normal", "Noto Sans JP", sans-serif;
-}
-@font-face {
-    font-family: 'GenJyuuGothic-Medium';
-    src: url(../font/GenJyuuGothic-Medium.woff);
-}
-@mixin genjyuu_medium() {
-    font-family: "GenJyuuGothic-Medium", "Noto Sans JP", sans-serif;
-}
-
-
-// font-weight system
-@mixin font_thin($weight: 100) {
-    font-weight: $weight;
-}
-@mixin font_light($weight: 300) {
-    font-weight: $weight;
-}
-@mixin font_regular($weight: 400) {
-    font-weight: $weight;
-}
-@mixin font_medium($weight: 500) {
-    font-weight: $weight;
-}
-@mixin font_bold($weight: 700) {
-    font-weight: $weight;
-}
-@mixin font_black($weight: 900) {
-    font-weight: $weight;
 }
 
 // transition

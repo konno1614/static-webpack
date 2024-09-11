@@ -3,10 +3,8 @@
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
-        "build": "NODE_ENV=production webpack --mode production",
-        "dev": "webpack --mode development",
         "start": "webpack serve --mode development",
-        "lint": "eslint --cache --fix ./src/js/ && prettier --write ./src/"
+        "build": "NODE_ENV=production webpack --mode production"
     },
     "repository": {
         "type": "git",

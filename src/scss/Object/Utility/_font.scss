@@ -1,4 +1,5 @@
 @use "../../foundation/system" as s;
+@use "../../foundation/font" as f;
 @use "../../foundation/mixin" as m;
 
 .u-font {
@@ -7,15 +8,15 @@
     @include s.breakpoint(sp) {
     }
     &--notosansjp {
-        @include s.notosansjp();
+        @include f.notosansjp();
     }
     &--corporate {
-        @include s.corporate();
+        @include f.corporate();
     }
     &--genjyuu {
-        @include s.genjyuu();
+        @include f.genjyuu();
     }
     &--genjyuu_medium {
-        @include s.genjyuu_medium();
+        @include f.genjyuu_medium();
     }
 }
