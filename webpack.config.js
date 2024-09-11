@@ -57,10 +57,10 @@ const htmlGlobPlugins = (entries) => {
                     minimize: {
                         // 大文字と小文字を区別
                         caseSensitive: true,
-                        // タグ間の空白を削除
+                        // タグ間の空白を削除（生成するHTMLを圧縮）
                         collapseWhitespace: true,
                         // タグ間に改行が含まれる場合に詰める（collapseWhitespace: trueと共に使用）
-                        preserveLineBreaks: false,
+                        preserveLineBreaks: true,
                         // HTMLコメントを削除
                         removeComments: true,
                     },
@@ -88,7 +88,7 @@ const app = {
     devServer: {
         //ルートディレクトリの指定
         static: path.resolve(__dirname, 'src'),
-        port: '3000',
+        port: '4000',
         hot: true,
         open: true,
         watchFiles: ['src/**/*', 'public/**/*'],
@@ -96,9 +96,9 @@ const app = {
     //パッケージのライセンス情報をjsファイルの中に含める
     optimization: {
         minimizer: [
-        new TerserPlugin({
-            extractComments: false,
-        }),
+            new TerserPlugin({
+                extractComments: false,
+            }),
         ],
     },
     module: {
@@ -171,6 +171,14 @@ const app = {
     plugins: [
         ...cssGlobPlugins(entriesScss),
         ...htmlGlobPlugins(entries),
+        new ImageminWebpWebpackPlugin({
+            config: [{
+                test: /\.(png|jpe?g)$/i, // 対象ファイル
+                options: {
+                    quality:  75, // 画質
+                }
+            }]
+        }),
         new CopyPlugin({
             patterns: [
                 {
@@ -184,14 +192,6 @@ const app = {
                     to: path.resolve(__dirname, 'public/font'),
                 },
             ],
-        }),
-        new ImageminWebpWebpackPlugin({
-            config: [{
-                test: /\.(png|jpe?g)$/i, // 対象ファイル
-                options: {
-                quality:  75 // 画質
-                }
-            }]
         })
     ],
     //source-map タイプのソースマップを出力
