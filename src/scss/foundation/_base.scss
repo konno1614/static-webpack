@@ -1,6 +1,8 @@
 /* base
 --------------------------- */
 @use "./system" as s;
+@use "./color" as c;
+@use "./font" as f;
 @use "./mixin" as m;
 
 *,
@@ -20,20 +22,23 @@ html {
     scroll-behavior: smooth;
 }
 body {
-    color: s.$c-black;
-    background-color: s.$c-white;
+    color: c.$c-black;
+    background-color: c.$c-white;
     font-size: 1.6rem;
-    @include s.notosansjp();
-    @include s.font_regular();
+    @include f.notosansjp();
+    @include f.font_regular();
     overflow-x: hidden;
+    @include s.breakpoint(sp) {
+        font-size: 1.4rem;
+    }
     &.is-open {
         overflow: hidden;
         touch-action: none;
     }
 }
 ::selection {
-    background-color: rgba($color: s.$c-black, $alpha: 0.7);
-    color: s.$c-white;
+    background-color: rgba($color: c.$c-black, $alpha: 0.7);
+    color: c.$c-white;
 }
 
 img,
@@ -45,7 +50,7 @@ object {
     border: none;
 }
 a {
-    color: s.$c-primary;
+    color: c.$c-primary;
     text-decoration: underline;
     // カーソルは乗っているがクリックはされていない状態
     &:hover {

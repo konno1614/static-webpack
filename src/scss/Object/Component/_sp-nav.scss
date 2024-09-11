@@ -1,7 +1,8 @@
 @use "../../foundation/system" as s;
+@use "../../foundation/color" as c;
 @use "../../foundation/mixin" as m;
 
-/* ハンバーガーメニュー */
+/* hamburger menu */
 .c-hamburger {
     display: none;
     @include s.breakpoint(sp) {
@@ -18,8 +19,8 @@
         width: 40px;
         height: 40px;
         border-radius: 50%;
-        background-color: s.$c-primary;
-        box-shadow: 0 0 5px rgba($color: s.$c-black, $alpha: .8);
+        background-color: c.$c-primary;
+        box-shadow: 0 0 5px rgba($color: c.$c-black, $alpha: .8);
         &:hover {
             cursor: pointer;
         }
@@ -28,7 +29,7 @@
             display: inline-block;
             width: 16px;
             height: 2px;
-            background-color: s.$c-white;
+            background-color: c.$c-white;
             @include s.transition-base();
             &+span {
                 margin-top: 4px;
@@ -51,9 +52,9 @@
         }
     }
 }
-/* sp ナビ */
+/* sp nav */
 .c-sp-nav {
-    background-color: s.$c-white;
+    background-color: c.$c-white;
     position: fixed;
     z-index: 99;
     overflow-y: scroll;
@@ -78,14 +79,14 @@
             a {
                 text-decoration: none;
                 font-size: 1.2rem;
-                color: s.$c-black;
+                color: c.$c-black;
                 display: block;
                 padding: 20px;
             }
         }
     }
 }
-/* 展開時背景 */
+/* nav bg */
 .c-sp-nav-bg {
     opacity: 0;
     visibility: hidden;
