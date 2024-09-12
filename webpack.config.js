@@ -15,9 +15,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackWatchedGlobEntries = require('webpack-watched-glob-entries-plugin');
 //EJS用
 const { htmlWebpackPluginTemplateCustomizer } = require('template-ejs-loader');
-
+// ソースマップの生成
+// const enabledSourceMap = process.env.NODE_ENV !== 'development';
 const enabledSourceMap = process.env.NODE_ENV !== 'production';
-
+// ファイルのパス
 const filePath = {
     js: './src/js/',
     ejs: './src/ejs/',
@@ -28,7 +29,6 @@ const filePath = {
 const entriesScss = WebpackWatchedGlobEntries.getEntries([path.resolve(__dirname, `${filePath.sass}**/**.scss`)], {
     ignore: path.resolve(__dirname, `${filePath.sass}**/_*.scss`),
 })();
-
 const cssGlobPlugins = (entriesScss) => {
     return Object.keys(entriesScss).map(
         (key) =>
@@ -63,13 +63,13 @@ const htmlGlobPlugins = (entries) => {
                         preserveLineBreaks: true,
                         // HTMLコメントを削除
                         removeComments: true,
-                    },
+                    }
                 },
                 templatePath: `${filePath.ejs}${key}.ejs`,
             }),
             //JS・CSS自動出力と圧縮を無効化
             inject: false,
-            minify: false,
+            minify: false
         })
     );
 };
@@ -103,61 +103,61 @@ const app = {
     },
     module: {
         rules: [
-        {
-            test: /\.ejs$/i,
-            use: ['html-loader', 'template-ejs-loader'],
-        },
-        {
-            test: /\.ts$/,
-            use: 'ts-loader',
-            exclude: /node_modules/,
-        },
-        {
-            // 対象となるファイルの拡張子(scss)
-            test: /\.(sa|sc|c)ss$/,
-            // Sassファイルの読み込みとコンパイル
-            use: [
-                // CSSファイルを抽出するように MiniCssExtractPlugin のローダーを指定
-                {
-                    loader: MiniCssExtractPlugin.loader,
-                },
-                // CSSをバンドルするためのローダー
-                {
-                    loader: 'css-loader',
-                    options: {
-                        //URL の解決を無効に
-                        url: false,
-                        // production モードでなければソースマップを有効に
-                        sourceMap: enabledSourceMap,
-                        // postcss-loader と sass-loader の場合は2を指定
-                        importLoaders: 2,
-                        // 0 => no loaders (default);
-                        // 1 => postcss-loader;
-                        // 2 => postcss-loader, sass-loader
+            {
+                test: /\.ejs$/i,
+                use: ['html-loader', 'template-ejs-loader'],
+            },
+            {
+                test: /\.ts$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
+            },
+            {
+                // 対象となるファイルの拡張子(scss)
+                test: /\.(sa|sc|c)ss$/,
+                // Sassファイルの読み込みとコンパイル
+                use: [
+                    // CSSファイルを抽出するように MiniCssExtractPlugin のローダーを指定
+                    {
+                        loader: MiniCssExtractPlugin.loader,
                     },
-                },
-                // PostCSS（autoprefixer）の設定
-                {
-                    loader: 'postcss-loader',
-                    options: {
-                        // PostCSS でもソースマップを有効に
-                        sourceMap: enabledSourceMap,
-                        postcssOptions: {
-                            // ベンダープレフィックスを自動付与
-                            plugins: [require('autoprefixer')({ grid: true })],
+                    // CSSをバンドルするためのローダー
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            //URL の解決を無効に
+                            url: false,
+                            // production モードでなければソースマップを有効に
+                            sourceMap: enabledSourceMap,
+                            // postcss-loader と sass-loader の場合は2を指定
+                            importLoaders: 2,
+                            // 0 => no loaders (default);
+                            // 1 => postcss-loader;
+                            // 2 => postcss-loader, sass-loader
                         },
                     },
-                },
-                // Sass を CSS へ変換するローダー
-                {
-                    loader: 'sass-loader',
-                    options: {
-                        //  production モードでなければソースマップを有効に
-                        sourceMap: enabledSourceMap,
+                    // PostCSS（autoprefixer）の設定
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            // PostCSS でもソースマップを有効に
+                            sourceMap: enabledSourceMap,
+                            postcssOptions: {
+                                // ベンダープレフィックスを自動付与
+                                plugins: [require('autoprefixer')({ grid: true })],
+                            },
+                        },
                     },
-                },
-            ],
-        },
+                    // Sass を CSS へ変換するローダー
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            //  production モードでなければソースマップを有効に
+                            sourceMap: enabledSourceMap,
+                        },
+                    },
+                ],
+            },
         ],
     },
     // import 文で .ts ファイルを解決するため
