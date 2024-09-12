@@ -171,14 +171,6 @@ const app = {
     plugins: [
         ...cssGlobPlugins(entriesScss),
         ...htmlGlobPlugins(entries),
-        new ImageminWebpWebpackPlugin({
-            config: [{
-                test: /\.(png|jpe?g)$/i, // 対象ファイル
-                options: {
-                    quality:  75, // 画質
-                }
-            }]
-        }),
         new CopyPlugin({
             patterns: [
                 {
@@ -192,6 +184,16 @@ const app = {
                     to: path.resolve(__dirname, 'public/font'),
                 },
             ],
+        }),
+        new ImageminWebpWebpackPlugin({
+            config: [{
+                test: /\.(png|jpe?g)$/i, // 対象ファイル
+                options: {
+                    quality:  75, // 画質
+                    detailsLogs : false, // コンソールに出力
+                    silent : false, // コンソールに印刷
+                }
+            }]
         })
     ],
     //source-map タイプのソースマップを出力
